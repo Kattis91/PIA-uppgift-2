@@ -43,9 +43,11 @@ export default function Index() {
           />
         </View>
       </View>
+      
+      <View style={{ flex: 1 }}></View>
 
       {(counter > 0) &&
-        <View style={{ backgroundColor: "red", borderRadius: 10, marginTop: 20, padding: 5 }}>
+        <View style={{ backgroundColor: "red", borderRadius: 10, marginTop: 20, padding: 5, marginBottom: 20 }}>
           <Button
             title="RESET"
             color= "white"
