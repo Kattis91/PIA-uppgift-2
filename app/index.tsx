@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
 
@@ -9,25 +9,20 @@ export default function Index() {
     setCounter(counter + 1)
   }
 
-  function subtraktion() {
+  function subtraction() {
     setCounter(counter - 1);
     if (counter < 1)
       setCounter(0);
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        backgroundColor: "#FFFFC2"
-      }}
-    >
+    <View style={styles.container}>
+
       <Text style={{ fontSize: 75 }}>{counter}</Text>
 
       <View style={{ flexDirection: "row" }}>
 
-        <View style={{ backgroundColor: "green", borderRadius: 10, marginRight: 10, marginTop: 20, padding: 5 }}>
+        <View style={styles.plusButton}>
           <Button
             title="PLUS"
             color="white"
@@ -35,29 +30,57 @@ export default function Index() {
           />
         </View>
 
-        <View style={{ backgroundColor: "blue", borderRadius: 10, marginLeft: 10, marginTop: 20, padding: 5 }}>
+        <View style={styles.minusButton}>
           <Button
             title="MINUS"
             color="white"
-            onPress={subtraktion}
+            onPress={subtraction}
           />
         </View>
       </View>
-      
+
       <View style={{ flex: 1 }}></View>
 
       {(counter > 0) &&
-        <View style={{ backgroundColor: "red", borderRadius: 10, marginTop: 20, padding: 5, marginBottom: 20 }}>
+        <View style={styles.resetButton}>
           <Button
             title="RESET"
-            color= "white"
+            color="white"
             onPress={() => {
               setCounter(0);
             }}
           />
         </View>
       }
-
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: "#FFFFC2"
+  },
+  plusButton: {
+    backgroundColor: "green", 
+    borderRadius: 10, 
+    marginRight: 10, 
+    marginTop: 20, 
+    padding: 5
+  },
+  minusButton: {
+    backgroundColor: "blue", 
+    borderRadius: 10, 
+    marginLeft: 10, 
+    marginTop: 20, 
+    padding: 5
+  },
+  resetButton: {
+    backgroundColor: "#BF0A30", 
+    borderRadius: 10, 
+    marginTop: 20, 
+    padding: 5, 
+    marginBottom: 20
+  },
+});
