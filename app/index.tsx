@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { Text, View } from "react-native";
 
 export default function Index() {
+
+  const [counter, setCounter] = useState(0)
+
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text style={{ fontSize: 75}}> {counter}</Text>
     </View>
   );
 }
