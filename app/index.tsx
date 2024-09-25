@@ -5,6 +5,16 @@ export default function Index() {
 
   const [counter, setCounter] = useState(0)
 
+  function addition() {
+    setCounter(counter + 1)
+  }
+
+  function subtraktion() {
+    setCounter(counter - 1);
+    if (counter < 1)
+      setCounter(0);
+  }
+
   return (
     <View
       style={{
@@ -16,19 +26,14 @@ export default function Index() {
 
       <Button
         title="PLUS"
-        onPress={() => {
-          setCounter(counter + 1);
-        }}
+        onPress={addition}
       />
 
       <Button
         title="MINUS"
-        onPress={() => {
-          setCounter(counter - 1);
-        if (counter < 1 )
-          setCounter(0);
-        }}
+        onPress={subtraktion}
       />
+
 
     </View>
   );
