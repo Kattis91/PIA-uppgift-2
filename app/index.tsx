@@ -25,6 +25,8 @@ export default function Index() {
         title="MINUS"
         onPress={() => {
           setCounter(counter - 1);
+        if (counter < 1 )
+          setCounter(0);
         }}
       />
 
