@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 
 export default function Index() {
 
@@ -12,7 +12,22 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text style={{ fontSize: 75}}> {counter}</Text>
+      <Text style={{ fontSize: 75 }}>{counter}</Text>
+
+      <Button
+        title="PLUS"
+        onPress={() => {
+          setCounter(counter + 1);
+        }}
+      />
+
+      <Button
+        title="MINUS"
+        onPress={() => {
+          setCounter(counter - 1);
+        }}
+      />
+
     </View>
   );
 }
