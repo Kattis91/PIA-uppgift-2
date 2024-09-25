@@ -33,13 +33,15 @@ export default function Index() {
         title="MINUS"
         onPress={subtraktion}
       />
-      
-      <Button
-        title="RESET"
-        onPress={() => {
-          setCounter(0);
-        }}
-      />
+
+      {(counter > 0) &&
+        <Button
+          title="RESET"
+          onPress={() => {
+            setCounter(0);
+          }}
+        />
+      }
 
     </View>
   );
